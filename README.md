@@ -4,6 +4,8 @@
 ### Summary:
 Getting the indoor location of the user based on measuring the signal strength of the many distributed access points.
 
+![alt tag](https://user-images.githubusercontent.com/25906706/28717451-27dfec80-73a2-11e7-934a-db7435727a73.png)
+
 ### Tools:
 * [Java 1.8+](https://java.com/en/)
 * [Maven 3.0+](https://maven.apache.org/)
@@ -56,7 +58,7 @@ Note: We can do all the SAP HANA database settings programmatically, but our aim
 jdbcDriver=com.sap.db.jdbc.Driver  
 jdbcURL=jdbc:sap://YOUR_SAP_HANA_IP:30015/?autocommit=true
 ```  
-![alt tag](https://github.wdf.sap.corp/storage/user/24134/files/69e57ba8-26af-11e7-9d50-ec36b21bdaa5)
+![alt tag](https://user-images.githubusercontent.com/25906706/28717450-260c30c6-73a2-11e7-9528-65874e7ad752.png)
 
 ### Maven settings:
 * Add the [**modified weka jar package**](https://github.wdf.sap.corp/D069020/Indoor-Location-Detection-Scenario/files/2046/weka.jar.zip) and the [**SAP HANA - Java Driver (ngdbc.jar)**](https://github.wdf.sap.corp/D069020/Indoor-Location-Detection-Scenario/files/2045/ngdbc.jar.zip) to the Maven local repository manually:  
@@ -102,6 +104,5 @@ java -jar indoorLocationDetection-0.0.1.jar YOUR_TOPIC dConsumer
 * Run the mobile application and turn the Mapping mode off and start scanning. Now the application sends the measurment without the location (the room's number) which our program is supposed to discover it.
 * Congratulation! the system is running and the dashboard visualize the users locations.  
 
-![alt tag](https://github.wdf.sap.corp/storage/user/24134/files/b1aa11ec-26aa-11e7-99a6-507a6a2fabc4)
 
 Note: In our example, by default the system can classify three rooms. You can simplly add more rooms, by adding more cases to the switch statement from the *Consumer.java* file. So that the order of the array's elements is the same as the order of scanning rooms. That mean the first scanned room has the first index, the second scanned room has the second index and so on.
